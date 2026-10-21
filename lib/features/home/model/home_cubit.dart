@@ -28,6 +28,25 @@ class HomeCubit extends Cubit<HomeState> {
     } catch (e) {
       emit(HomeFailure(msg: e.toString()));
     }
+  } Future<void> filterProducts({required int id}) async {
+    emit(HomeLoading());
+    try {
+      final Response response = await dio.get(ApiEndpoints.allProducts,
+      queryParameters: {
+        "categoryId":id
+      });
+     final  List<dynamic> products = response.data as
+      List<dynamic>;
+      final List<HomeModel>product = products
+          .map((pro) => HomeModel.fromJson(pro as Map<String, dynamic>))
+          .toList();
+      emit(HomeSuccess(model: product));
+    } on DioException catch (e) {
+      emit(HomeFailure(msg: e.message ?? "Dio Exception"));
+    } catch (e) {
+      emit(HomeFailure(msg: e.toString()));
+    }
   }
+
 
 }

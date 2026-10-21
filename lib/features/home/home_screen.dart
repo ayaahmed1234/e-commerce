@@ -90,17 +90,19 @@ class _HomeScreenState extends State<HomeScreen> {
                           itemCount: state.categories.length,
                           itemBuilder: (context, index) {
                             final item = state.categories[index];
-                            bool isselected = selectedinex == index;
+                            bool isSelected = selectedinex == index;
                             return GestureDetector(
                               onTap: () {
                                 setState(() {
+
                                   selectedinex = index;
+                                  BlocProvider.of<HomeCubit>(context).filterProducts(id: state.categories[index].id??2);
                                 });
                               },
                               child: CategoryItem(
                                 title: item.categoryName??"omega 3" ,
-                                bgColor: isselected ? primary : Colors.white,
-                                color: isselected ? Colors.white : Colors.black,
+                                bgColor: isSelected ? primary : Colors.white,
+                                color: isSelected ? Colors.white : Colors.black,
                               ),
                             );
                           },
@@ -149,7 +151,9 @@ class _HomeScreenState extends State<HomeScreen> {
                       );
                     }
 
-                    return SizedBox();
+                    return SizedBox(
+                      child: Center(child: Text("No Available Items"),),
+                    );
                   },
                 ),
               ),
