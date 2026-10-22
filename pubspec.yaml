@@ -38,6 +38,7 @@ dependencies:
   dio: ^5.11.1
   flutter_bloc: ^9.1.1
   pretty_dio_logger: ^1.4.0
+  google_nav_bar: ^5.0.7
 
 dev_dependencies:
   flutter_test:

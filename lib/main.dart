@@ -1,5 +1,6 @@
 import 'package:ecommerce/features/auth/signup/signup_screen.dart';
 import 'package:ecommerce/features/home/home_screen.dart';
+import 'package:ecommerce/features/home/nav_bar.dart';
 import 'package:flutter/material.dart';
 
 import 'features/splash/view.dart';
@@ -20,7 +21,7 @@ class MyApp extends StatelessWidget {
 
         colorScheme: .fromSeed(seedColor: Colors.deepPurple),
       ),debugShowCheckedModeBanner: false,
-      home: HomeScreen(),
+      home: NavBar(),
     );
   }
 }

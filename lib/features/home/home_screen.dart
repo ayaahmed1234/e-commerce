@@ -5,6 +5,7 @@ import 'package:ecommerce/features/home/categorymodel/category_cubit.dart';
 import 'package:ecommerce/features/home/model/home_cubit.dart';
 import 'package:ecommerce/features/home/widgets/category_item.dart';
 import 'package:ecommerce/features/home/widgets/product_item.dart';
+import 'package:ecommerce/features/search/search_view.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -58,7 +59,9 @@ class _HomeScreenState extends State<HomeScreen> {
                     color: primary,
                     iconSize: 20,
 
-                    onPressed: () {},
+                    onPressed: () {
+                      Navigator.of(context).push(MaterialPageRoute(builder: (context) => SearchScreen(),));
+                    },
                     icon: Icon(
                       Icons.manage_search_rounded,
                       // color: Colors.white,
