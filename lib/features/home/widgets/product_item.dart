@@ -1,3 +1,4 @@
+import 'package:ecommerce/core/helper/app_text_style.dart';
 import 'package:flutter/material.dart';
 class ProductItem extends StatelessWidget {
   const ProductItem({super.key, required this.title, required this.price, required this.image});
@@ -25,11 +26,12 @@ final String image;
           Padding(
             padding: const EdgeInsets.all(8.0),
             child: Text(title,
-              overflow: TextOverflow.ellipsis,maxLines: 1,),
+              overflow: TextOverflow.ellipsis,maxLines: 1,
+            style: AppTextStyle.black_600_22.copyWith(fontWeight: FontWeight.w500)),
           ),
           Padding(
             padding: const EdgeInsets.all(8.0),
-            child: Text("$price"),
+            child: Text("$price"r"$",style: AppTextStyle.primary_400_15.copyWith(fontWeight: FontWeight.w500),),
           ),
         ],
       ),

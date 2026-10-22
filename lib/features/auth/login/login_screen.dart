@@ -6,6 +6,7 @@ import 'package:ecommerce/features/auth/signup/signup_screen.dart';
 import 'package:ecommerce/features/home/home_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:lottie/lottie.dart';
 
 class LoginScreen extends StatelessWidget {
   LoginScreen({super.key});
@@ -106,7 +107,9 @@ class LoginScreen extends StatelessWidget {
                       },
                       builder: (context, state) {
                         if(state is LoginLoading){
-                          return Center(child: CircularProgressIndicator());
+                          return Center(
+                            child: Lottie.asset("assets/lottie/loading (3).json",width: 200,height: 250),
+                          );
                         }
 
                         final cubit = BlocProvider.of<LoginCubit>(context);

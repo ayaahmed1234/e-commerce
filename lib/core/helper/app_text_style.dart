@@ -33,7 +33,7 @@ class AppTextStyle {
     fontWeight: FontWeight.w500
   );static const TextStyle lightGreen_500_15=TextStyle(
     fontSize: 15,
-    color: Colors.green,
+    color: primary,
     fontWeight: FontWeight.w500
   );
 }
